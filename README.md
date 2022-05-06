@@ -11,12 +11,12 @@ Reconstructing the patterns of expansion out of Africa and across the globe by m
 
 
 
-<sup>1</sup>Crabtree, S.A. et al. <a href="http://doi.org/10.1038/s41562-021-01106-8">Landscape rules predict optimal super-highways for the first peopling of Sahul</a>. <strong><em>Nature Human Behaviour</strong></em> 5:1303-1313, doi:10.1038/s41562-021-01106-8 (2021) (see also relevant <a href="https://github.com/dawhite/sfa">Github repository</a>)<br>
-<sup>2</sup>Bradshaw, C.J.A. et al. <a href="http://doi.org/10.1038/s41467-021-21551-3">Stochastic models support rapid peopling of Late Pleistocene Sahul</a>. <strong><em>Nature Communications</strong></em> 12:2440, doi:10.1038/s41467-021-21551-3 (2021) (see also relevant <a href="https://github.com/cjabradshaw/SahulHumanSpread">Github repository</a>)
+<small><sup>1</sup>Crabtree, S.A. et al. <a href="http://doi.org/10.1038/s41562-021-01106-8">Landscape rules predict optimal super-highways for the first peopling of Sahul</a>. <strong><em>Nature Human Behaviour</strong></em> 5:1303-1313, doi:10.1038/s41562-021-01106-8 (2021) (see also relevant <a href="https://github.com/dawhite/sfa">Github repository</a>)</small><br>
+<small><sup>2</sup>Bradshaw, C.J.A. et al. <a href="http://doi.org/10.1038/s41467-021-21551-3">Stochastic models support rapid peopling of Late Pleistocene Sahul</a>. <strong><em>Nature Communications</strong></em> 12:2440, doi:10.1038/s41467-021-21551-3 (2021) (see also relevant <a href="https://github.com/cjabradshaw/SahulHumanSpread">Github repository</a>)</small>
 
 
 ## Code
-The R file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/SahulHumanSpreadGithub.SingleScenarioAvg.R"><code>SahulHumanSpreadGithub.SingleScenarioAvg.R</code></a> in the <code>Code</code> directory produces average scenario outputs over a set number of iterations. The user can choose the particulars of the scenario (e.g., underlying <em>K</em>~NPP relationship, entry time(s), entry point(s), spatial clustering, stochastic variances, minimum viable population thresholds, etc.)
+The R file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/SahulHumanSpreadGithub.SingleScenarioAvg.R"><code>SahulHumanSpreadGithub.SingleScenarioAvg.R</code></a> in the <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/tree/main/code"><code>Code</code></a> directory produces average scenario outputs over a set number of iterations. The user can choose the particulars of the scenario (e.g., underlying <em>K</em>~NPP relationship, entry time(s), entry point(s), spatial clustering, stochastic variances, minimum viable population thresholds, etc.)
 
 The file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/matrixOperators.r"><code>matrixOperators.R</code></a> includes necessary functions and is sourced directly within the R code file.
 
