@@ -1,5 +1,5 @@
 # Directionally supervised cellular automaton for the initial peopling of Sahul
-<img align="right" src="www/regions.jpg" alt="Sahul predictions" width="200" style="margin-top: 20px">
+<img align="right" src="www/regions.jpg" alt="Sahul predictions" width="400" style="margin-top: 20px">
 
 ‘Superhighways’ of human movement in Sahul<sup>1</sup> combined with a demographic cellular automaton<sup>2</sup>
 
