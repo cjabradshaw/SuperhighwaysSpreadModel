@@ -15,7 +15,7 @@ Prof <a href="http://scholar.google.com.au/citations?sortby=pubdate&hl=en&user=1
 May 2022 <br>
 <a href=mailto:corey.bradshaw@flinders.edu.au>e-mail</a> <br>
 <br>
-<sup>1</sup>Crabtree, S.A. et al. <a href="http://doi.org/10.1038/s41562-021-01106-8">Landscape rules predict optimal super-highways for the first peopling of Sahul</a>. <strong><em>Nature Human Behaviour</strong></em> 5:1303-1313, doi:10.1038/s41562-021-01106-8 (2021) (see also relevant <a href="https://github.com/dawhite/sfa">Github repository</a>)<br>
+<sub><sup><sup>1</sup>Crabtree, S.A. et al. <a href="http://doi.org/10.1038/s41562-021-01106-8">Landscape rules predict optimal super-highways for the first peopling of Sahul</a>. <strong><em>Nature Human Behaviour</strong></em> 5:1303-1313, doi:10.1038/s41562-021-01106-8 (2021) (see also relevant <a href="https://github.com/dawhite/sfa">Github repository</a>)</sup></sub><br>
 <small><sup>2</sup>Bradshaw, C.J.A. et al. <a href="http://doi.org/10.1038/s41467-021-21551-3">Stochastic models support rapid peopling of Late Pleistocene Sahul</a>. <strong><em>Nature Communications</strong></em> 12:2440, doi:10.1038/s41467-021-21551-3 (2021) (see also relevant <a href="https://github.com/cjabradshaw/SahulHumanSpread">Github repository</a>)</small>
 
 
