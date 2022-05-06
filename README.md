@@ -21,5 +21,5 @@ The R file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/
 The file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/matrixOperators.r"><code>matrixOperators.R</code></a> includes necessary functions and is sourced directly within the R code file.
 
 ## Data
-The two zipped files (<code>CSV files.zip</code> and <code>TIF files.zip</code>) in the <code>data</code> directory should be decompressed and their files placed in the same directory as the R code.
+The two zipped files (<code>CSV files.zip</code> and <code>TIF files.zip</code>) in the <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/tree/main/data"><code>data</code></a> directory should be decompressed and their files placed in the same directory as the R code.
 
