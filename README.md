@@ -16,9 +16,9 @@ Reconstructing the patterns of expansion out of Africa and across the globe by m
 
 
 ## Code
-The R file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/SahulHumanSpreadGithub.SingleScenarioAvg.R"><code>SahulHumanSpreadGithub.SingleScenarioAvg.R</code></a> in the <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/tree/main/code"><code>Code</code></a> directory produces average scenario outputs over a set number of iterations. The user can choose the particulars of the scenario (e.g., underlying <em>K</em>~NPP relationship, entry time(s), entry point(s), spatial clustering, stochastic variances, minimum viable population thresholds, etc.)
+The R file <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/blob/main/code/SHSpreadPathGithub.R"><code>SHSpreadPathGithub.R</code></a> in the <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/tree/main/code"><code>Code</code></a> directory produces average scenario outputs over a set number of iterations. The user can choose the particulars of the scenario (e.g., underlying <em>K</em>~NPP relationship, entry time(s), entry point(s), spatial clustering, stochastic variances, minimum viable population thresholds, etc.)
 
-The file <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/matrixOperators.r"><code>matrixOperators.R</code></a> includes necessary functions and is sourced directly within the R code file.
+The file <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/blob/main/code/matrixOperators.r"><code>matrixOperators.R</code></a> includes necessary functions and is sourced directly within the R code file.
 
 ## Data
 The two zipped files (<code>CSV files.zip</code> and <code>TIF files.zip</code>) in the <a href="https://github.com/cjabradshaw/SuperhighwaysSpreadModel/tree/main/data"><code>data</code></a> directory should be decompressed and their files placed in the same directory as the R code.
