@@ -2,7 +2,7 @@
 ## Cellular automata lattice model of human spread through Sahul ##
 ## with superhighways-weighted dispersal layer                   ##
 ## SINGLE-SCENARIO AVERAGES (ITERATED)                           ##
-## May 2021                                                      ##
+## May 2021 / updated October 2022                               ##
 ## CJA Bradshaw                                                  ##
 ###################################################################
 
@@ -468,7 +468,10 @@ sh.sah <- sh[sah.keep,]
     # long.disp.sd <- 0.01 # beta sd for above // no longer used //
     # stoch.beta.func(long.disp.mu, long.disp.sd)
     NK.emig.min <- 0.3; NK.emig.max <- 0.7 # N/K when pmov.mean emigrates
-    
+
+    ## set maximum long-distance dispersal parameter to limit dispersal errors
+    maxldd <- 20 # (number of cells away from focal cell in either x or y)
+
     # update ruggedness movement function with rugmov.mod
     rugmovmod.func <- function(x) {
       rugmovmod <- as.numeric(coef(fit.expd)[1]) + rugmov.mod*as.numeric(coef(fit.expd)[2]) * (x)^(1/3)
@@ -823,7 +826,7 @@ sh.sah <- sh[sah.keep,]
       z.layers <- dim(array.N)[3]
       
       # storage vectors
-      N.vec <- poparea.vec <- pc.complete <- cat.pr.est <- rep(0,z.layers)
+      N.vec <- poparea.vec <- pc.complete <- cat.pr.est  <- dNS.ext1 <- dEW.ext1 <- reset1 <- reset2 <- rep(0,z.layers)
       N.vec[1] <- array.N[start.row1,start.col1,1]
       if (second.col == "yes") {
         N.vec[start.time2] <- array.N[start.row1,start.col1,start.time2]
@@ -1144,6 +1147,33 @@ sh.sah <- sh[sah.keep,]
           } # end i loop
         } # end j loop
         
+        ## catch and remove unrealistic inflations of numbers from column anomaly
+        col.infl <- rep(NA,j.cols)
+        for (j in 1:j.cols) {
+          ratiott1 <- as.vector(na.omit(array.N[,j,t]/array.N[,j,t-1]))
+          ratiott <- ifelse(length(ratiott1) == 0, NA, ratiott1)
+          col.infl[j] <- mean(ratiott1[is.infinite(ratiott1)==F], na.rm=T)
+        }
+        
+        if (t != start.time2 & length(which(col.infl[is.infinite(col.infl)==F] > 20)) > 0) {
+          reset1[t] <- 1
+          array.N[,,t] <- array.N[,,t-1]
+        }
+        
+        g1sub <- which(array.N[,,t] > 1, arr.ind=T)
+        array.ext1.coords <- c(min(g1sub[,1]), max(g1sub[,1]), min(g1sub[,2]), max(g1sub[,2])) # ymin, ymax, xmin, xmax
+        
+        dNS.ext1[t] <- array.ext1.coords[2] - array.ext1.coords[1]
+        dEW.ext1[t] <- array.ext1.coords[4] - array.ext1.coords[3]
+        
+        diffdNS.ext <- dNS.ext1[t] - dNS.ext1[t-1]; diffdEW.ext <- dEW.ext1[t] - dEW.ext1[t-1]
+        if (t != start.time2 & (length(diffdNS.ext) > 0 | length(diffdEW.ext)) > 0) {
+          if (t > 2 & (diffdNS.ext > maxldd | diffdEW.ext > maxldd)) { # overlap with previous N.array layer when anomaly detected
+            reset2[t] <- 1
+            array.N[,,t] <- array.N[,,t-1]
+          }
+        }
+        
         # remove negative values
         array.N[,,t] <- ifelse(array.N[,,t] < 0, 0, round(array.N[,,t], 0))
         
@@ -1167,6 +1197,24 @@ sh.sah <- sh[sah.keep,]
             lrowcol.mn <- round(mean(length(rows.ng0),length(cols.ng0)), 0)
             mat.N.it <- array.N[,,t+1]
             Y <- rThomas(round(kappaP.func(length(which(array.N[,,t+1] > 0, arr.ind=F)))*lrowcol.mn, 0), rpp.scale, round(rpp.mu.mult*lrowcol.mn,0), drop=T, nsim = 1)
+            
+            Ys.len <- rep(NA,length(Y))
+            for (d in 1:length(Y)) {
+              Ys.len[d] <- length(Y[[d]]$y)
+            }
+            seqlen <- round(mean(Ys.len)/nClusters.targ,0)
+            
+            xs.ran <- ys.ran <- 0
+            for (e in 1:nClusters.targ) {
+              ran.simNo <- sample(1:nsims, 1) # choose sim at random
+              lenYit <- length(Y[[ran.simNo]]$x)
+              ran.seq.st <- sample(1:(lenYit-seqlen),1)
+              ran.seq.st <- ifelse(ran.seq.st < 0, 1, ran.seq.st)
+              xs.ran <- c(xs.ran, Y[[e]]$x[ran.seq.st:(ran.seq.st+seqlen)])
+              ys.ran <- c(ys.ran, Y[[e]]$y[ran.seq.st:(ran.seq.st+seqlen)])
+            }
+            xs.ran <- as.vector(na.omit(xs.ran[-1])); ys.ran <- as.vector(na.omit(ys.ran[-1]))
+            
             Yrows.calc <- round(Y$y * length(rows.ng0), 0)
             Yrows <- Yrows.calc + min(rows.ng0) - 1
             Yrows <- ifelse((Yrows.calc + min(rows.ng0) - 1) == 0, 1, (Yrows.calc + min(rows.ng0) - 1)) 
@@ -1224,7 +1272,11 @@ sh.sah <- sh[sah.keep,]
 
       } # end t loop
       
-      sub97.vec[m] <- (min(which(pc.complete >= 97), na.rm=T)) - 1
+      sat.thresh <- 97 # 'saturation' threshold
+      satthreshsub <- min(which(pc.complete >= sat.thresh), na.rm=T)
+      anomSum <- sum(reset1[1:satthreshsub] + reset2[1:satthreshsub]) # number of anomalous iterations skipped
+      sub97.vec[m] <- satthreshsub - 1 - anomSum
+      
       N.mat[m,] <- N.vec
 
       #############################################################
