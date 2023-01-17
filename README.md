@@ -1,6 +1,6 @@
 # Directionally supervised cellular automaton for the initial peopling of Sahul
 <img align="right" src="www/regions75.jpg" alt="Sahul predictions" width="400" style="margin-top: 20px">
-<a href="https://zenodo.org/badge/latestdoi/489231947"><img src="https://zenodo.org/badge/489231947.svg" alt="DOI"></a>
+<a href="https://doi.org/10.5281/zenodo.7015957"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7015957.svg" alt="DOI"></a>
 <br>
 ‘Superhighways’ of human movement in Sahul<sup>1</sup> combined with a demographic cellular automaton<sup>2</sup>
 
