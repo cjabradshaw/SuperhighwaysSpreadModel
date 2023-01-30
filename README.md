@@ -6,7 +6,7 @@
 
 <br>
 Data and R code associated with the paper:
-
+<br>
 <a href="http://scholar.google.com.au/citations?sortby=pubdate&hl=en&user=1sO0O3wAAAAJ&view_op=list_works">BRADSHAW, CJA</a>, <a href="https://stefanicrabtree.com/about-stefani/">SA CRABTREE</a>, <a href="https://santafe.edu/people/profile/devin-white">DA WHITE</a>, <a href="https://research.jcu.edu.au/portfolio/sean.ulm">S ULM</a>, <a href="https://research.jcu.edu.au/portfolio/michael.bird">MI BIRD</a>, <a href="https://www.emmconsulting.com.au/about/leadership-team/dr-alan-william-2/">AN WILLIAMS</a>, <a href="http://www.flinders.edu.au/people/frederik.saltre">F SALTRÉ</a>. 2023. <a href="http://doi.org/10.1016/j.quascirev.2023.107971">Directionally supervised cellular automaton for the initial peopling of Sahul</a>. <em>Quaternary Science Reviews</em> doi:10.1016/j.quascirev.2023.107971
 
 An earlier version of the manuscript is available as a preprint at <em>OSF Preprints</em> doi:<a href="http://doi.org/10.31219/osf.io/a45fw">10.31219/osf.io/a45fw</a> (2022)
