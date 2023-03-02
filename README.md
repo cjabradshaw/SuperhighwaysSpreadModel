@@ -40,3 +40,5 @@ The two zipped files (<code>CSV files.zip</code> and <code>TIF files.zip</code>)
 <br>
 Also note that the original archaeological data used to validate both the unsupervised cellular automaton in <a href="http://doi.org/10.1038/s41467-021-21551-3">Bradshaw et al. (2021)</a> and the superhighways model of <a href="https://www.nature.com/articles/s41562-021-01106-8">Crabtree et al. (2021)</a> can be accessed using these two links: <a href="https://github.com/cjabradshaw/SahulHumanSpread/blob/master/Archaeology%20sites%20%26%20dates%20used%20for%20comparison%20layers.xlsx">Archaeological Sites and Dates</a> (Bradshaw et al. 2021); <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41562-021-01106-8/MediaObjects/41562_2021_1106_MOESM3_ESM.xlsx">Supplementary Table 8</a> (Crabtree et al. 2021)
 
+All code ran on the Flinders University <em>Deepthought</em> High-Performance Computing facility: Flinders University (2021). DeepThought (HPC). doi:<a href="https://doi.org/10.25957/FLINDERS.HPC.DEEPTHOUGHT">10.25957/FLINDERS.HPC.DEEPTHOUGHT</a>
+
